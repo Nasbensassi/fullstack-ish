@@ -6,6 +6,10 @@ const app = express();
 const port = process.env.EXPRESS_PORT || 8000;
 const connectionString = process.env.CONNECTION_STRING;
 
+app.get('/', (req, res) => {
+  res.send('Välkommen Jon!');
+});
+
 const pool = new Pool({
   connectionString: connectionString,
 });
