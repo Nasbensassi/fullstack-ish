@@ -4,7 +4,7 @@ require('dotenv').config();
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 8000;
-const connectionString = process.env.CONNECTION_STRING;
+const connectionString = process.env.PGURI;
 
 app.use(express.static(path.join(path.resolve(), 'dist')))
 
