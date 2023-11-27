@@ -1,16 +1,18 @@
 const express = require('express');
 const { Pool } = require('pg');
 require('dotenv').config();
-
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 8000;
 const connectionString = process.env.CONNECTION_STRING;
 
+app.use(express.static(path.join(path.resolve(), 'dist')))
 
 
-app.get('/', (req, res) => {
-  res.send('Välkommen Jon!');
-});
+
+// app.get('/', (req, res) => {
+//   res.send('Välkommen Jon!');
+// });
 
 const pool = new Pool({
   connectionString: connectionString,
