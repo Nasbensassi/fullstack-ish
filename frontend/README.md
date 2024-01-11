@@ -2,6 +2,8 @@
 
 render website : https://fullstack-ish-jmi4.onrender.com
 
+git repository: https://github.com/Nasbensassi/fullstack-ish
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
