@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const connectionString = process.env.PGURI;
 
-app.use(express.static(path.join(path.resolve(), 'dist')))
+app.use(express.static(path.join(path.resolve(), 'public')))
 
 
 
@@ -38,5 +38,5 @@ app.get('/api/players', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://0.0.0.0:${port}`);
 });
