@@ -21,7 +21,7 @@ const pool = new Pool({
 app.use(express.json());
 
 app.get('/api/players', async (req, res) => {
-  try {
+  try {console.log('GET request for /api/players');
     const result = await pool.query(`
       SELECT 
         players.*, 
@@ -29,7 +29,8 @@ app.get('/api/players', async (req, res) => {
         goals.assists 
       FROM players
       LEFT JOIN goals ON players.player_id = goals.player_id
-    `);
+    `,
+    );
     res.json(result.rows);
   } catch (error) {
     console.error('Error executing query', error);
